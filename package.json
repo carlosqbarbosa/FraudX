@@ -1,0 +1,13 @@
+{
+  "name": "fraudx",
+  "version": "1.0.0",
+  "description": "FraudX é um sistema baseado em machine learning desenvolvido para identificar possíveis fraudes em transações financeiras online. O projeto utiliza um conjunto de dados realista e técnicas de aprendizado para classificar se uma transação é legítima ou fraudulenta, ajudando a prevenir perdas financeiras e melhorar a segurança digital.",
+  "main": "Register.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "live-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
