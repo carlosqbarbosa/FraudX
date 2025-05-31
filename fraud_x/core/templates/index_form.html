@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FraudX</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="logo-section">
+        <img src="{% static 'assets/logoSemBackground.png' %}" alt="Logo FraudX" class="logo" />
+        <span class="logo-text">FraudX</span>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#formulario">Form</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <section id="home" class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>FraudX: Fast<br>responses to fast<br>threats!</h1>
+        <img src="{% static 'assets/Vector 32.png' %}" alt="Linha decorativa" class="linha-hero" />
+      </div>
+      <div class="hero-img">
+        <img src="{% static 'assets/Group 138.png' %}" alt="Apresentation" />
+      </div>
+    </div>
+  </section>
+  
+
+  <section id="sobre" class="missao">
+    <div class="container">
+      <h2>Our Mission</h2>
+      <p>FraudX is an innovative digital security verification tool designed to identify fraud in</p>
+      <p>transactions in a practical and efficient way. With an approach based on Artificial  </p>
+      <p>Intelligence, our technology analyzes the data provided by users in forms, based on </p>
+      <p>an extensive database of fraudulent patterns. </p>
+    </div>
+  </section>
+
+  <section class="funciona">
+    <div class="banner"></div>
+  </section>
+
+  <section id="formTransition" class="formTransition">
+    <div class="container">
+      <h2>Fill in to detect possible fraud</h2>
+     <form id="fraudForm" action="{% url 'verify_transaction' %}" method="POST">
+    {% csrf_token %}
+    
+    <label for="transaction_type">Transaction Type:</label>
+    <select id="transaction_type" name="transaction_type" required>
+      <option value="" disabled selected>Selecione uma opção</option>
+      <option value="PAYMENT">PAYMENT</option>
+      <option value="TRANSFER">TRANSFER</option>
+      <option value="DEBIT">DEBIT</option>
+      <option value="CASH-OUT">CASH-OUT</option>
+    </select>
+  
+    <label for="type_cash_out">Is Type Cash Out?</label>
+    <select id="type_cash_out" name="transaction_type_debit" required>
+      <option value="" disabled selected>Selecione uma opção</option>
+      <option value="no">NO</option>
+      <option value="yes">YES</option>
+    </select>
+
+    <label for="type_debit">Is Type Debit?</label>
+    <select id="type_debit" name="transaction_type_debit" required>
+      <option value="" disabled selected>Selecione uma opção</option>
+      <option value="no">NO</option>
+      <option value="yes">YES</option>
+    </select>
+
+    <label for="type_payment">Is Type Payment?</label>
+    <select id="type_dtype_paymentebit" name="transaction_type_payment" required>
+      <option value="" disabled selected>Selecione uma opção</option>
+      <option value="no">NO</option>
+      <option value="yes">YES</option>
+    </select>
+
+    <label for="type_transfer">Is Type Transfer?</label>
+    <select id="type_transfer" name="transaction_type_transfer" required>
+      <option value="" disabled selected>Selecione uma opção</option>
+      <option value="no">NO</option>
+      <option value="yes">YES</option>
+    </select>
+
+    <label for="amount">Amount: </label>
+    <input type="number" id="amount" name="amount" required step="0.01"/>
+
+    <label for="old_balance_org">Old Balance Origem:</label>
+    <input type="number" id="old_balance_org" name="old_balance_org" required step="0.01"/>
+
+    <label for="new_balance_orig">New Balance Origem:</label>
+    <input type="number" id="new_balance_orig" name="new_balance_orig" required step="0.01"/>
+
+    <label for="old_balance_dest">Old Balance Destiny:</label>
+    <input type="number" id="old_balance_dest" name="old_balance_dest" required step="0.01"/>
+
+     <label for="new_balance_dest">New Balance_Dest:</label>
+    <input type="number" id="new_balance_dest" name="new_balance_dest" required step="0.01"/>
+
+    <button type="submit">To Check</button>
+</form>
+
+    </div>
+  </section>
+  <p></P>
+  <footer>
+    <div class="container">
+      <p><strong>FraudX</strong> &copy; 2025</p>
+      <p>Contact: contact@fraudx.com</p>
+    </div>
+  </footer>
+  {#  <script src="{% static 'js/script.js' %}"></script>  #}
+</body>
+</html>
