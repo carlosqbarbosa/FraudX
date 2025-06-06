@@ -11,7 +11,8 @@
     <script src="{% static 'js/jquery.maskMoney.js' %}"></script>
     <script src="{% static 'js/jquery.alphanumeric.js' %}"></script>
     <script src="{% static 'js/format-input.js' %}"></script>
-    <script src="{% static 'js/message-handler.js' %}"></script>
+    <script src="{% static 'js/ajax-submit.js' %}"></script>
+
 </head>
 <body>
     <header>
@@ -80,13 +81,17 @@
 
                 <button type="submit" id="submit-button" disabled>To Check</button>
             </form>
+
+            <div id="response-message" class="alert-box">
+                <p id="message-text"></p>
+                <div id="button-alert-div">
+                    <button id="close-message-btn">✖ Close</button>
+                </div>
+            </div>
         </div>
     </section>
 
-    <div id="response-message" class="alert-box {% if message %}show{% endif %}">
-        <p>{{ message }}</p>
-        <button onclick="closeMessage()">✖ Close</button>
-    </div>
+    
 
     <footer>
         <div class="container">

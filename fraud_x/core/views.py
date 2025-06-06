@@ -37,9 +37,8 @@ def verify_transaction(request):
             print("Error in form:", form.errors)  
             message = "❌ Error in form, verify is fields and try again."
 
-    return render(request, 'index_form.html', {'form': form, 'result': result, 'message': message})
-
-from decimal import Decimal
+    return JsonResponse({"message": message})
+    #return render(request, 'index_form.html', {'form': form, 'result': result, 'message': message})
 
 def adjust_transaction_form_data(post_data):
     form_data = post_data.copy()

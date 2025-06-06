@@ -2,19 +2,18 @@
 Attributes css for div alert message
 ************************************/
 .alert-box {
-    display: none;
-    position: fixed;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #f8d7da;
-    color: #721c24;
+    display: none; /* 🔹 Escondendo a div por padrão */
+    position: relative; /* Mantém a div no fluxo normal da página */
+    margin-top: 20px; /* Adiciona espaçamento entre o formulário e a div */
+    width: 100%; /* Para alinhar ao formulário */
+    max-width: 600px; /* Ajusta a largura para maior legibilidade */
+    background: #dff0d8; /* Verde claro suave */
+    color: #3c763d; /* Texto mais escuro para boa leitura */
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     font-size: 16px;
-    max-width: 400px;
 }
 
 .alert-box.show {
@@ -22,11 +21,38 @@ Attributes css for div alert message
 }
 
 .alert-box button {
-    background: transparent;
+    background: #60af61; /* Verde mais escuro para contraste */
+    color: #fff; /* Texto branco para melhor legibilidade */
     border: none;
-    font-size: 18px;
+    padding: 8px 12px;
+    padding-top: 1%;
+    font-size: 16px;
     cursor: pointer;
-    float: right;
-    color: #721c24;
+    border-radius: 5px; /* Bordas arredondadas para um visual moderno */
+    transition: background 0.3s ease;
 }
+
+.alert-box button:hover {
+    background: #4a9d67; /* Tom mais escuro ao passar o mouse */
+}
+
+#button-alert-div{
+    padding-top: 2%;
+}
+
+.alert-box.error {
+    background: #f8d7da; /* Vermelho claro */
+    color: #721c24; /* Texto escuro para contraste */
+}
+
+.alert-box.error button {
+    background: #721c24; /* Vermelho mais escuro */
+    color: #fff; /* Texto branco */
+}
+
+.alert-box.error button:hover {
+    background: #5a1a1f; /* Vermelho ainda mais escuro no hover */
+}
+
+
 /*****************************************/
