@@ -1,0 +1,32 @@
+/***********************************
+Attributes css for div alert message
+************************************/
+.alert-box {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 16px;
+    max-width: 400px;
+}
+
+.alert-box.show {
+    display: block;
+}
+
+.alert-box button {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    float: right;
+    color: #721c24;
+}
+/*****************************************/
