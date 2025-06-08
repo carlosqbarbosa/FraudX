@@ -45,6 +45,7 @@ def adjust_transaction_form_data(post_data):
     print("🔎 Start ajustment form data - data originals received:", form_data)
 
     field_mapping = {
+        'amount': 'amount',
         'old_balance_org': 'old-balance-org',
         'new_balance_orig': 'new-balance-orig',
         'old_balance_dest': 'old-balance-dest',

@@ -13,12 +13,12 @@ else:
     model = None  # Define como None para evitar erros
 
 def previus_fraud(transaction):
-    print("Entrou no método")  
+    print("In metod previus_fraud")  
 
     if model is None:
         return "AI model not found"
 
-    print("O arquivo existe, montando variáveis")  
+    print("The fili exist, amount variables")  
 
     transaction_type = str(transaction.transaction_type).strip().upper() if transaction.transaction_type else "UNKNOWN"
     print(f"Transaction Type: {transaction_type}")  
@@ -59,6 +59,10 @@ def previus_fraud(transaction):
         print(model.feature_names_in_)  
 
     predict = model.predict(data_input)
+
+    print("Return of trayning IA", predict)
+    print("Return of trayning IA", predict[0])
+
     probability_array = model.predict_proba(data_input)[0]
     probability = probability_array[1 if predict[0] else 0] * 100
 
